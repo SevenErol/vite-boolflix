@@ -1,12 +1,21 @@
 <script>
 
+import MovieList from "./MovieList.vue"
+
 export default {
-    name: "AppMain"
+    name: "AppMain",
+    components: {
+        MovieList
+    }
 }
 
 </script>
 
 <template>
+
+    <MovieList />
+
+
 
 
 </template>
