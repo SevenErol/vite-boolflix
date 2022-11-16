@@ -2,17 +2,19 @@ import { reactive } from "vue"
 import axios from 'axios'
 
 export const store = reactive({
-    API_URL: "https://api.themoviedb.org/3/search/movie?api_key=047ca6274f89e4b26bb7a49cbb2609b4&language=it-IT&query=Matrix&page=1&include_adult=false",
+    API_URL: "https://api.themoviedb.org/3/search/movie",
     results: [],
     error: null,
     params: {
         api_key: "047ca6274f89e4b26bb7a49cbb2609b4",
-        query: "Matrix"
+        query: "l"
     },
     callApi(url) {
-        axios.get(url)
+
+        const newUrl = `${url}?api_key=${this.params.api_key}&query=${this.params.query}`
+
+        axios.get(newUrl)
             .then(response => {
-                console.log(response.data)
                 this.results = response.data.results
             })
             .catch(err => {
