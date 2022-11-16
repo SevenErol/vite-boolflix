@@ -22,7 +22,8 @@ export const store = reactive({
                 this.error = err.message
             })
 
-    }
+    },
+    searchText: ''
 
 
 })

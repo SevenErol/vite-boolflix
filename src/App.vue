@@ -1,5 +1,6 @@
 <script>
 import AppMain from "./components/AppMain.vue"
+import AppHeader from "./components/AppHeader.vue";
 import { store } from './store.js';
 
 export default {
@@ -13,13 +14,16 @@ export default {
     this.store.callApi(this.store.API_URL)
   },
   components: {
-    AppMain
+    AppMain,
+    AppHeader
   }
 }
 
 </script>
 
 <template>
+
+  <AppHeader />
 
   <AppMain />
 

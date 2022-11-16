@@ -1,12 +1,19 @@
 <script>
 
+import SearchButton from './SearchButton.vue';
+
 export default {
-    name: "AppHeader"
+    name: "AppHeader",
+    components: {
+        SearchButton
+    }
 }
 
 </script>
 
 <template>
+
+    <SearchButton />
 
 
 </template>
