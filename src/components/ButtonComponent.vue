@@ -15,6 +15,6 @@ export default {
 
 <template>
 
-    <button @click="$emit('searchBar')">Search</button>
+    <button @click="$emit('searchBarClick')">Search</button>
 
 </template>

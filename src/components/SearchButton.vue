@@ -13,8 +13,12 @@ export default {
     },
     methods: {
         searchBar() {
-            this.store.params.query = this.store.searchText
-            this.store.callApi(this.store.API_URL)
+
+            if (this.store.searchText.length > 0) {
+                this.store.params.query = this.store.searchText
+                this.store.callApi(this.store.API_URL)
+            }
+
         }
     },
     components: {
@@ -28,7 +32,7 @@ export default {
 
     <div>
         <input type="text" v-model="store.searchText">
-        <ButtonComponent @searchBar="searchBar()" />
+        <ButtonComponent @searchBarClick="searchBar()" />
     </div>
 
 
