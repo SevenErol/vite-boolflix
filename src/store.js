@@ -3,6 +3,7 @@ import axios from 'axios'
 
 export const store = reactive({
     API_URL: "https://api.themoviedb.org/3/search/",
+    cover_URL: "https://image.tmdb.org/t/p/",
     results: [],
     series: [],
     error: null,

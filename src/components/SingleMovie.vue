@@ -28,6 +28,7 @@ export default {
         <p>{{ movie.original_language }}</p>
         <p>{{ movie.vote_average }}</p>
         <img :src="getImagePath(store.checkFlag(movie))" :alt="movie.original_language">
+        <img :src="store.cover_URL + 'w342' + movie.backdrop_path" :alt="movie.original_title">
     </div>
 
 

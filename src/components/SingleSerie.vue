@@ -27,6 +27,7 @@ export default {
         <p>{{ serie.original_language }}</p>
         <p>{{ serie.vote_average }}</p>
         <img :src="getImagePath(store.checkFlag(serie))" :alt="serie.original_language">
+        <img :src="store.cover_URL + 'w342' + serie.backdrop_path" :alt="serie.original_name">
     </div>
 
 
