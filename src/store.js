@@ -23,7 +23,7 @@ export const store = reactive({
             })
 
     },
-    searchText: ''
-
+    searchText: '',
+    src: ''
 
 })
