@@ -1,7 +1,6 @@
 <script>
 
 import { store } from './store.js';
-import axios from 'axios'
 
 export default {
   name: "App",
@@ -11,7 +10,7 @@ export default {
     }
   },
   mounted() {
-    this.store.methods.callApi(this.store.API_URL)
+    this.store.callApi(this.store.API_URL)
   }
 }
 
