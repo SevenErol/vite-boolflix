@@ -1,11 +1,13 @@
 <script>
 
 import MovieList from "./MovieList.vue"
+import SeriesList from "./SeriesList.vue";
 
 export default {
     name: "AppMain",
     components: {
-        MovieList
+        MovieList,
+        SeriesList
     }
 }
 
@@ -14,6 +16,8 @@ export default {
 <template>
 
     <MovieList />
+
+    <SeriesList />
 
 
 

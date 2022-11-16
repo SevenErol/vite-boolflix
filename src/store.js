@@ -38,6 +38,15 @@ export const store = reactive({
 
     },
     searchText: '',
-    src: ''
+    src: '',
+    checkFlag(movie) {
+        if (movie.original_language === "it") {
+            return "../assets/img/italian_flag.png"
+        } else if (movie.original_language === "en") {
+            return "../assets/img/great_britain_flag.png"
+        } else if (movie.original_language === "fr") {
+            return "../assets/img/france_flag.png"
+        }
+    }
 
 })

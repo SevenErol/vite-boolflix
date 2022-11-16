@@ -2,14 +2,14 @@
 import { store } from "../store.js"
 
 export default {
-    name: "SingleMovie",
+    name: "SingleSerie",
     data() {
         return {
             store
         }
     },
     props: {
-        movie: Object
+        serie: Object
     },
     methods: {
         getImagePath(imgPath) {
@@ -23,11 +23,10 @@ export default {
 <template>
 
     <div>
-        <h2>{{ movie.title }}</h2>
-        <h2>{{ movie.original_title }}</h2>
-        <p>{{ movie.original_language }}</p>
-        <p>{{ movie.vote_average }}</p>
-        <img :src="getImagePath(store.checkFlag(movie))" :alt="movie.original_language">
+        <h2>{{ serie.original_name }}</h2>
+        <p>{{ serie.original_language }}</p>
+        <p>{{ serie.vote_average }}</p>
+        <img :src="getImagePath(store.checkFlag(serie))" :alt="serie.original_language">
     </div>
 
 
