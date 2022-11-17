@@ -7,6 +7,7 @@ export const store = reactive({
     results: [],
     series: [],
     error: null,
+    integerVote: null,
     params: {
         api_key: "047ca6274f89e4b26bb7a49cbb2609b4",
         query: "l"
@@ -48,6 +49,50 @@ export const store = reactive({
         } else if (movie.original_language === "fr") {
             return "../assets/img/france_flag.png"
         }
+    },
+    starsVote(vote) {
+
+        switch (vote) {
+            case 0:
+            case 1:
+            case 2:
+
+                this.integerVote = "one star"
+
+                break;
+
+            case 3:
+            case 4:
+
+                this.integerVote = "two stars"
+
+                break;
+
+            case 5:
+            case 6:
+
+                this.integerVote = "three stars"
+
+                break;
+
+            case 7:
+            case 8:
+
+                this.integerVote = "four stars"
+
+                break;
+
+            case 9:
+            case 10:
+
+                this.integerVote = "five stars"
+
+                break;
+
+            default:
+                break;
+        }
+
     }
 
 })
