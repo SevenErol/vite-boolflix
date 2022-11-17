@@ -15,6 +15,12 @@ export default {
         getImagePath(imgPath) {
             return new URL(imgPath, import.meta.url).href;
         }
+    },
+    computed: {
+        stars() {
+            return this.store.integerVote = this.store.starsVote(parseInt(this.serie.vote_average))
+        }
+
     }
 }
 
@@ -25,7 +31,7 @@ export default {
     <div>
         <h2>{{ serie.original_name }}</h2>
         <p>{{ serie.original_language }}</p>
-        <p>{{ serie.vote_average }}</p>
+        <p>{{ stars }}</p>
         <img :src="getImagePath(store.checkFlag(serie))" :alt="serie.original_language">
         <img :src="store.cover_URL + 'w342' + serie.backdrop_path" :alt="serie.original_name">
     </div>
