@@ -1,0 +1,11 @@
+@use "./partials/variables" as *;
+
+@use "./partials/header";
+// @use "./partials/main";
+// @use "./partials/loading";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

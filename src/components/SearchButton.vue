@@ -17,6 +17,7 @@ export default {
             if (this.store.searchText.length > 0) {
                 this.store.params.query = this.store.searchText
                 this.store.callApi(this.store.API_URL)
+                this.store.searchText = ''
             }
 
         }
@@ -30,10 +31,10 @@ export default {
 
 <template>
 
-    <div>
-        <input type="text" v-model="store.searchText">
-        <ButtonComponent @searchBarClick="searchBar()" />
-    </div>
+
+    <input type="text" v-model="store.searchText" @keyup.enter="searchBar()" class="me-3">
+    <ButtonComponent @searchBarClick="searchBar()" />
+
 
 
 </template>

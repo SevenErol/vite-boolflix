@@ -12,10 +12,15 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 
+/*import complete bootstap */
+import 'bootstrap/dist/css/bootstrap.css'
+import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.js'
+
 /* add icons to the library */
 library.add(fas)
 library.add(far)
 
 createApp(App)
+    .use(bootstrap)
     .component('font-awesome-icon', FontAwesomeIcon)
     .mount('#app')
