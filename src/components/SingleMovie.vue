@@ -34,7 +34,7 @@ export default {
 
 <template>
 
-    <div class="col-3">
+    <div class="col-4">
         <div class="info">
 
             <h5 class="m-0"> Titolo: <span>{{ movie.title }}</span></h5>
@@ -58,7 +58,7 @@ export default {
 
         <div class="poster">
 
-            <img :src="store.cover_URL + 'w342' + movie.backdrop_path" :alt="movie.original_title">
+            <img :src="store.cover_URL + 'original' + movie.backdrop_path" :alt="movie.original_title">
 
         </div>
 

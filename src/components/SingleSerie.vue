@@ -34,7 +34,7 @@ export default {
 
 <template>
 
-    <div class="col-3">
+    <div class="col-4">
 
         <div class="info">
             <h2>{{ serie.original_name }}</h2>
@@ -45,7 +45,7 @@ export default {
         </div>
 
         <div class="poster">
-            <img :src="store.cover_URL + 'w342' + serie.backdrop_path" :alt="serie.original_name">
+            <img :src="store.cover_URL + 'original' + serie.backdrop_path" :alt="serie.original_name">
         </div>
 
     </div>
