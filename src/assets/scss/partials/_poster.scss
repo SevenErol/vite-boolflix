@@ -1,0 +1,8 @@
+@use "./variables" as *;
+
+
+.poster:hover {
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.4s;
+}
