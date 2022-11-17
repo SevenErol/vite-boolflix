@@ -53,15 +53,15 @@ export const store = reactive({
     starsVote(vote) {
 
         if (vote === 0 || vote === 1 || vote === 2) {
-            return "one star"
-        } else if (vote === 3 || vote === 4) {
-            return "two stars"
-        } else if (vote === 5 || vote === 6) {
-            return "three stars"
-        } else if (vote === 7 || vote === 8) {
-            return "four stars"
-        } else if (vote === 9 || vote === 10) {
-            return "five stars"
+            return 1
+        } else if (vote === 3 || vote === 4 || vote === 5) {
+            return 2
+        } else if (vote === 6 || vote === 7) {
+            return 3
+        } else if (vote === 8 || vote === 9) {
+            return 3
+        } else if (vote === 10) {
+            return 4
         }
 
     }

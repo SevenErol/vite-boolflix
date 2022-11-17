@@ -1,5 +1,6 @@
 <script>
 import { store } from "../store.js"
+import SingleStar from "./SingleStar.vue"
 
 export default {
     name: "SingleMovie",
@@ -21,6 +22,9 @@ export default {
             return this.store.integerVote = this.store.starsVote(parseInt(this.movie.vote_average))
         }
 
+    },
+    components: {
+        SingleStar
     }
 }
 
@@ -35,6 +39,8 @@ export default {
         <p>{{ stars }}</p>
         <img :src="getImagePath(store.checkFlag(movie))" :alt="movie.original_language">
         <img :src="store.cover_URL + 'w342' + movie.backdrop_path" :alt="movie.original_title">
+
+        <SingleStar v-for="n in this.store.starsVote(parseInt(this.movie.vote_average)) " />
     </div>
 
 
