@@ -1,6 +1,7 @@
 <script>
 import { store } from "../store.js"
 import SingleStar from "./SingleStar.vue"
+import SingleStarEmpty from "./SingleStarEmpty.vue"
 
 export default {
     name: "SingleMovie",
@@ -24,7 +25,8 @@ export default {
 
     },
     components: {
-        SingleStar
+        SingleStar,
+        SingleStarEmpty
     }
 }
 
@@ -41,6 +43,7 @@ export default {
         <img :src="store.cover_URL + 'w342' + movie.backdrop_path" :alt="movie.original_title">
 
         <SingleStar v-for="n in this.store.starsVote(parseInt(this.movie.vote_average)) " />
+        <SingleStarEmpty v-for="n in (5 - this.store.starsVote(parseInt(this.movie.vote_average)))" />
     </div>
 
 

@@ -1,5 +1,7 @@
 <script>
 import { store } from "../store.js"
+import SingleStar from "./SingleStar.vue"
+import SingleStarEmpty from "./SingleStarEmpty.vue"
 
 export default {
     name: "SingleSerie",
@@ -21,6 +23,10 @@ export default {
             return this.store.integerVote = this.store.starsVote(parseInt(this.serie.vote_average))
         }
 
+    },
+    components: {
+        SingleStar,
+        SingleStarEmpty
     }
 }
 
@@ -34,6 +40,9 @@ export default {
         <p>{{ stars }}</p>
         <img :src="getImagePath(store.checkFlag(serie))" :alt="serie.original_language">
         <img :src="store.cover_URL + 'w342' + serie.backdrop_path" :alt="serie.original_name">
+
+        <SingleStar v-for="n in this.store.starsVote(parseInt(this.serie.vote_average)) " />
+        <SingleStarEmpty v-for="n in (5 - this.store.starsVote(parseInt(this.serie.vote_average)))" />
     </div>
 
 
