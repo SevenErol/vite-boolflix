@@ -52,45 +52,16 @@ export const store = reactive({
     },
     starsVote(vote) {
 
-        switch (vote) {
-            case 0:
-            case 1:
-            case 2:
-
-                this.integerVote = "one star"
-
-                break;
-
-            case 3:
-            case 4:
-
-                this.integerVote = "two stars"
-
-                break;
-
-            case 5:
-            case 6:
-
-                this.integerVote = "three stars"
-
-                break;
-
-            case 7:
-            case 8:
-
-                this.integerVote = "four stars"
-
-                break;
-
-            case 9:
-            case 10:
-
-                this.integerVote = "five stars"
-
-                break;
-
-            default:
-                break;
+        if (vote === 0 || vote === 1 || vote === 2) {
+            return "one star"
+        } else if (vote === 3 || vote === 4) {
+            return "two stars"
+        } else if (vote === 5 || vote === 6) {
+            return "three stars"
+        } else if (vote === 7 || vote === 8) {
+            return "four stars"
+        } else if (vote === 9 || vote === 10) {
+            return "five stars"
         }
 
     }
