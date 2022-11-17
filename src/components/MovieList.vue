@@ -21,7 +21,8 @@ export default {
 
     <div class="section_container p-3">
 
-        <div class="row flex-nowrap">
+        <h2 class="text-white">Lista film</h2>
+        <div class="row flex-nowrap my_row">
             <SingleMovie v-for="movie in store.results" :movie="movie" />
         </div>
 

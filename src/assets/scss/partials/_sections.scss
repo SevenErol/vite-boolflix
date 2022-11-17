@@ -2,11 +2,11 @@
 
 
 
-.section_container::-webkit-scrollbar {
+.my_row::-webkit-scrollbar {
     display: none;
 }
 
-.section_container {
+.my_row {
     overflow-x: scroll;
 
     .col-4 {
