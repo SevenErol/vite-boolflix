@@ -11,7 +11,7 @@ export const store = reactive({
     integerVote: null,
     params: {
         api_key: "047ca6274f89e4b26bb7a49cbb2609b4",
-        query: "matrix"
+        query: "m"
     },
     callApi(url) {
 
