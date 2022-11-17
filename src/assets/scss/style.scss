@@ -1,7 +1,8 @@
 @use "./partials/variables" as *;
 
 @use "./partials/header";
-// @use "./partials/main";
+@use "./partials/main";
+@use "./partials/sections";
 // @use "./partials/loading";
 
 * {

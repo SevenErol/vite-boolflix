@@ -34,16 +34,35 @@ export default {
 
 <template>
 
-    <div>
-        <h2>{{ movie.title }}</h2>
-        <h2>{{ movie.original_title }}</h2>
-        <p>{{ movie.original_language }}</p>
-        <p>{{ stars }}</p>
-        <img :src="getImagePath(store.checkFlag(movie))" :alt="movie.original_language">
-        <img :src="store.cover_URL + 'w342' + movie.backdrop_path" :alt="movie.original_title">
+    <div class="col-3">
+        <div class="info">
 
-        <SingleStar v-for="n in this.store.starsVote(parseInt(this.movie.vote_average)) " />
-        <SingleStarEmpty v-for="n in (5 - this.store.starsVote(parseInt(this.movie.vote_average)))" />
+            <h5 class="m-0"> Titolo: <span>{{ movie.title }}</span></h5>
+            <h5 class="m-0">Titolo originale: <span>{{ movie.original_title }}</span></h5>
+            <h5 class="m-0">Voto:
+                <span>
+                    <SingleStar v-for="n in this.store.starsVote(parseInt(this.movie.vote_average)) " />
+                    <SingleStarEmpty v-for="n in (5 - this.store.starsVote(parseInt(this.movie.vote_average)))" />
+                </span>
+            </h5>
+            <div class="language_flag">
+                <span>{{ movie.original_language }}</span>
+                <img :src="getImagePath(store.checkFlag(movie))" :alt="movie.original_language">
+            </div>
+
+            <p class="m-0">{{ movie.overview }}</p>
+
+
+
+        </div>
+
+        <div class="poster">
+
+            <img :src="store.cover_URL + 'w342' + movie.backdrop_path" :alt="movie.original_title">
+
+        </div>
+
+
     </div>
 
 

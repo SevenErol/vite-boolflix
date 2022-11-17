@@ -19,8 +19,11 @@ export default {
 
 <template>
 
-    <SingleSerie v-for="serie in store.series" :serie="serie" />
-
+    <div class="series_container">
+        <div class="row flex-nowrap p-3">
+            <SingleSerie v-for="serie in store.series" :serie="serie" />
+        </div>
+    </div>
 
 </template>
 

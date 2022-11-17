@@ -19,7 +19,15 @@ export default {
 
 <template>
 
-    <SingleMovie v-for="movie in store.results" :movie="movie" />
+    <div class="movie_container p-3">
+
+        <div class="row flex-nowrap">
+            <SingleMovie v-for="movie in store.results" :movie="movie" />
+        </div>
+
+    </div>
+
+
 
 
 </template>

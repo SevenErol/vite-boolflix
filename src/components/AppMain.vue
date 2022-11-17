@@ -15,12 +15,13 @@ export default {
 
 <template>
 
-    <MovieList />
+    <div class="main_container">
 
-    <SeriesList />
+        <MovieList />
 
+        <SeriesList />
 
-
+    </div>
 
 </template>
 
