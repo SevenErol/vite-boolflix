@@ -21,6 +21,10 @@ export const store = reactive({
 
         const seriesUrl = `${url}search/tv?api_key=${this.params.api_key}&query=${this.params.query}`
 
+        this.castMovies = [];
+
+        this.castSeries = [];
+
         axios.get(newUrl)
             .then(response => {
                 this.results = response.data.results
@@ -35,6 +39,12 @@ export const store = reactive({
                         .then(response => {
 
                             this.castMovies.push(response.data.cast)
+
+                            response.data.cast.length = 5
+
+                            if (this.castMovies.length === 5) {
+                                return
+                            }
                         })
                         .catch(err => {
                             console.error(err.message);
@@ -64,6 +74,8 @@ export const store = reactive({
                         .then(response => {
 
                             this.castSeries.push(response.data.cast)
+
+                            response.data.cast.length = 5
                         })
                         .catch(err => {
                             console.error(err.message);

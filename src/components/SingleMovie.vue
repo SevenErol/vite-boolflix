@@ -1,7 +1,10 @@
 <script>
 import { store } from "../store.js"
+
 import SingleStar from "./SingleStar.vue"
 import SingleStarEmpty from "./SingleStarEmpty.vue"
+
+import CastList from "./CastList.vue"
 
 export default {
     name: "SingleMovie",
@@ -26,7 +29,8 @@ export default {
     },
     components: {
         SingleStar,
-        SingleStarEmpty
+        SingleStarEmpty,
+        CastList
     }
 }
 
@@ -51,6 +55,10 @@ export default {
             </div>
 
             <p>{{ movie.overview }}</p>
+
+            <div>
+                <CastList :castList="store.castMovies" />
+            </div>
 
 
 
