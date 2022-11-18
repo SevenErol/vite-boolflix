@@ -37,15 +37,29 @@ export default {
     <div class="col-4">
 
         <div class="info">
-            <h2>{{ serie.original_name }}</h2>
-            <p>{{ serie.original_language }}</p>
-            <img :src="getImagePath(store.checkFlag(serie))" :alt="serie.original_language">
-            <SingleStar v-for="n in this.store.starsVote(parseInt(this.serie.vote_average)) " />
-            <SingleStarEmpty v-for="n in (5 - this.store.starsVote(parseInt(this.serie.vote_average)))" />
+            <h5> Titolo: <span>{{ serie.original_name }}</span></h5>
+            <h5>Voto:
+                <span>
+                    <SingleStar v-for="n in this.store.starsVote(parseInt(this.serie.vote_average)) " />
+                    <SingleStarEmpty v-for="n in (5 - this.store.starsVote(parseInt(this.serie.vote_average)))" />
+                </span>
+            </h5>
+            <div class="language_flag mb-2">
+                <span>{{ serie.original_language }}</span>
+                <img :src="getImagePath(store.checkFlag(serie))" :alt="serie.original_language">
+            </div>
+
+            <p>{{ serie.overview }}</p>
+
+
         </div>
 
-        <div class="poster">
+        <div class="poster" v-if="serie.backdrop_path !== null">
             <img :src="store.cover_URL + 'original' + serie.backdrop_path" :alt="serie.original_name">
+        </div>
+
+        <div class="poster not_found" v-else>
+            <img src="../assets/img/not_available.webp" alt="">
         </div>
 
     </div>
