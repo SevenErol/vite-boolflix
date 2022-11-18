@@ -24,8 +24,6 @@ export default {
 
 <template>
 
-    <ul>
-        <SingleCastMember v-for="cast in castList" :cast="cast" />
-    </ul>
+    <SingleCastMember v-for="( cast, index) in castList" :cast="cast" :index="index" />
 
 </template>

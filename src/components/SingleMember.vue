@@ -20,6 +20,6 @@ export default {
 
 <template>
 
-    <li>{{ member.character }}</li>
+    <li>{{ member.name }}</li>
 
 </template>

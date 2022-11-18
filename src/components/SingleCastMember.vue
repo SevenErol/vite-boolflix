@@ -12,7 +12,8 @@ export default {
         }
     },
     props: {
-        cast: Array
+        cast: Array,
+        index: Number
     },
     components: {
         SingleMember
@@ -23,6 +24,8 @@ export default {
 
 <template>
 
-    <SingleMember v-for="member in cast " :member="member" />
+    <ul>
+        <SingleMember v-for="member in cast " :member="member" />
+    </ul>
 
 </template>

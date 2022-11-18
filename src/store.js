@@ -66,8 +66,6 @@ export const store = reactive({
 
                 this.series.forEach(element => {
 
-                    console.log(element.id);
-
                     const creditsUrlSerie = `${url}movie/${element.id}/credits?api_key=${this.params.api_key}`
 
                     axios.get(creditsUrlSerie)

@@ -4,6 +4,7 @@
 .poster {
     position: relative;
     z-index: 1000;
+    overflow-y: auto;
 
     &:hover {
         cursor: pointer;
