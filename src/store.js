@@ -66,9 +66,9 @@ export const store = reactive({
                     axios.get(creditsUrlSerie)
                         .then(response => {
 
-                            this.castSeries.push(response.data.cast)
-
                             response.data.cast.length = 5
+
+                            element.cast = response.data.cast
                         })
                         .catch(err => {
                             console.error(err.message);

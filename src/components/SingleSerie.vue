@@ -2,6 +2,7 @@
 import { store } from "../store.js"
 import SingleStar from "./SingleStar.vue"
 import SingleStarEmpty from "./SingleStarEmpty.vue"
+import CastList from "./CastList.vue"
 
 export default {
     name: "SingleSerie",
@@ -26,7 +27,8 @@ export default {
     },
     components: {
         SingleStar,
-        SingleStarEmpty
+        SingleStarEmpty,
+        CastList
     }
 }
 
@@ -50,6 +52,10 @@ export default {
             </div>
 
             <p>{{ serie.overview }}</p>
+
+            <ul>
+                <CastList v-for="cast in serie.cast" :castList="cast" />
+            </ul>
 
 
         </div>
