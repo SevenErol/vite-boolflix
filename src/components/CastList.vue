@@ -15,7 +15,7 @@ export default {
         }
     },
     props: {
-        castList: Array
+        castList: Object
     }
 }
 
@@ -24,6 +24,8 @@ export default {
 
 <template>
 
-    <SingleCastMember v-for="( cast, index) in castList" :cast="cast" :index="index" />
+
+    <li>{{ castList.name }}</li>
+
 
 </template>

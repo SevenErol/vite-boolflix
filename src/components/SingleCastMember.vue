@@ -12,11 +12,20 @@ export default {
         }
     },
     props: {
-        cast: Array,
-        index: Number
+        object: Object
     },
     components: {
         SingleMember
+    },
+    methods: {
+        increment() {
+
+            if (this.store.activeIndex === this.store.castMovies.length) {
+                return this.store.activeIndex = 0
+            }
+
+            return this.store.activeIndex = this.store.activeIndex + 1
+        }
     }
 }
 
@@ -24,8 +33,6 @@ export default {
 
 <template>
 
-    <ul>
-        <SingleMember v-for="member in cast " :member="member" />
-    </ul>
+    <li>{{ object.name }}</li>
 
 </template>

@@ -56,9 +56,9 @@ export default {
 
             <p>{{ movie.overview }}</p>
 
-            <div>
-                <CastList :castList="store.castMovies" />
-            </div>
+            <ul>
+                <CastList v-for="cast in movie.cast" :castList="cast" />
+            </ul>
 
 
 

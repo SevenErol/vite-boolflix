@@ -16,3 +16,11 @@
 .not_found {
     opacity: 0.2;
 }
+
+.info {
+    overflow-y: scroll;
+}
+
+.info::-webkit-scrollbar {
+    display: none;
+}

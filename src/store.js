@@ -31,20 +31,15 @@ export const store = reactive({
 
                 this.results.forEach(element => {
 
-                    console.log(element.id);
-
                     const creditsUrlMovie = `${url}movie/${element.id}/credits?api_key=${this.params.api_key}`
 
                     axios.get(creditsUrlMovie)
                         .then(response => {
 
-                            this.castMovies.push(response.data.cast)
-
                             response.data.cast.length = 5
 
-                            if (this.castMovies.length === 5) {
-                                return
-                            }
+                            element.cast = response.data.cast
+
                         })
                         .catch(err => {
                             console.error(err.message);
@@ -113,5 +108,6 @@ export const store = reactive({
             return 4
         }
 
-    }
+    },
+    activeIndex: 0
 })
