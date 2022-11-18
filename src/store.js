@@ -2,11 +2,13 @@ import { reactive } from "vue"
 import axios from 'axios'
 
 export const store = reactive({
-    API_URL: "https://api.themoviedb.org/3/search/",
+    API_URL: "https://api.themoviedb.org/3/",
     cover_URL: "https://image.tmdb.org/t/p/",
     netflix_logo: "/wwemzKWzjKYJFfCeiB57q3r4Bcm.png",
     results: [],
     series: [],
+    castMovies: [],
+    castSeries: [],
     error: null,
     integerVote: null,
     params: {
@@ -15,14 +17,32 @@ export const store = reactive({
     },
     callApi(url) {
 
-        const newUrl = `${url}movie?api_key=${this.params.api_key}&query=${this.params.query}`
+        const newUrl = `${url}search/movie?api_key=${this.params.api_key}&query=${this.params.query}`
 
-        const seriesUrl = `${url}tv?api_key=${this.params.api_key}&query=${this.params.query}`
+        const seriesUrl = `${url}search/tv?api_key=${this.params.api_key}&query=${this.params.query}`
 
         axios.get(newUrl)
             .then(response => {
                 this.results = response.data.results
-                // this.series = response.data.results
+
+                this.results.forEach(element => {
+
+                    console.log(element.id);
+
+                    const creditsUrlMovie = `${url}movie/${element.id}/credits?api_key=${this.params.api_key}`
+
+                    axios.get(creditsUrlMovie)
+                        .then(response => {
+
+                            this.castMovies.push(response.data.cast)
+                        })
+                        .catch(err => {
+                            console.error(err.message);
+                            this.error = err.message
+                        })
+
+                });
+
             })
             .catch(err => {
                 console.error(err.message);
@@ -33,6 +53,24 @@ export const store = reactive({
             .then(response => {
 
                 this.series = response.data.results
+
+                this.series.forEach(element => {
+
+                    console.log(element.id);
+
+                    const creditsUrlSerie = `${url}movie/${element.id}/credits?api_key=${this.params.api_key}`
+
+                    axios.get(creditsUrlSerie)
+                        .then(response => {
+
+                            this.castSeries.push(response.data.cast)
+                        })
+                        .catch(err => {
+                            console.error(err.message);
+                            this.error = err.message
+                        })
+
+                });
             })
             .catch(err => {
                 console.error(err.message);
@@ -66,5 +104,4 @@ export const store = reactive({
         }
 
     }
-
 })

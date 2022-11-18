@@ -1,4 +1,5 @@
 <script>
+import { store } from "../store";
 
 import MovieList from "./MovieList.vue"
 import SeriesList from "./SeriesList.vue";
@@ -8,6 +9,11 @@ export default {
     components: {
         MovieList,
         SeriesList
+    },
+    data() {
+        return {
+            store
+        }
     }
 }
 
