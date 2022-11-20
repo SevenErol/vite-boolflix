@@ -1,14 +1,10 @@
 <script>
 
-import SingleCastMember from './SingleCastMember.vue';
-
+// import store JS object
 import { store } from "../store";
 
 export default {
     name: "CastList",
-    components: {
-        SingleCastMember
-    },
     data() {
         return {
             store
@@ -24,7 +20,7 @@ export default {
 
 <template>
 
-
+    <!-- single list element with cast member name -->
     <li>{{ castList.name }}</li>
 
 

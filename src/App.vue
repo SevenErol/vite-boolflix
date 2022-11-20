@@ -1,6 +1,9 @@
 <script>
+// import components header and main section
 import AppMain from "./components/AppMain.vue"
 import AppHeader from "./components/AppHeader.vue";
+
+// import store JS with all i need
 import { store } from './store.js';
 
 export default {
@@ -11,6 +14,7 @@ export default {
     }
   },
   mounted() {
+    // called function to get elements from database
     this.store.callApi(this.store.API_URL)
   },
   components: {
@@ -23,8 +27,10 @@ export default {
 
 <template>
 
+  <!-- header section  -->
   <AppHeader />
 
+  <!-- main section -->
   <AppMain />
 
 </template>

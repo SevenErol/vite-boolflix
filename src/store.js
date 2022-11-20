@@ -7,8 +7,6 @@ export const store = reactive({
     netflix_logo: "/wwemzKWzjKYJFfCeiB57q3r4Bcm.png",
     results: [],
     series: [],
-    castMovies: [],
-    castSeries: [],
     error: null,
     integerVote: null,
     params: {
@@ -20,10 +18,6 @@ export const store = reactive({
         const newUrl = `${url}search/movie?api_key=${this.params.api_key}&query=${this.params.query}`
 
         const seriesUrl = `${url}search/tv?api_key=${this.params.api_key}&query=${this.params.query}`
-
-        this.castMovies = [];
-
-        this.castSeries = [];
 
         axios.get(newUrl)
             .then(response => {
@@ -103,9 +97,9 @@ export const store = reactive({
         } else if (vote === 6 || vote === 7) {
             return 3
         } else if (vote === 8 || vote === 9) {
-            return 3
-        } else if (vote === 10) {
             return 4
+        } else if (vote === 10) {
+            return 5
         }
 
     },

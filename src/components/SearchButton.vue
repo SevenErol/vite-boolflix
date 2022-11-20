@@ -1,7 +1,8 @@
 <script>
-
+// import store JS object
 import { store } from '../store.js'
 
+// import single button component
 import ButtonComponent from "./ButtonComponent.vue";
 
 export default {
@@ -12,6 +13,8 @@ export default {
         }
     },
     methods: {
+
+        // function to change query and call database
         searchBar() {
 
             if (this.store.searchText.length > 0) {
@@ -31,11 +34,11 @@ export default {
 
 <template>
 
-
+    <!-- input searchbox bond to searchtext and with enter key event  -->
     <input type="text" v-model="store.searchText" @keyup.enter="searchBar()" class="me-3">
+
+    <!-- mounted button component with recall for function -->
     <ButtonComponent @searchBarClick="searchBar()" />
-
-
 
 </template>
 
